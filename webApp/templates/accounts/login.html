@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+
+<!--FONT AWESOME-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--GOOGLE FONTS-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@100;200;300;400;500;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap" rel="stylesheet">
+{% load static %}
+<link href="{% static 'accounts/style.css'%}" rel="stylesheet">
+
+
+</head>
+<style>
+
+</style>
+<body>
+<!--TOP NAVIGATION-->
+<header id="header">
+<div class="topnav" id="myTopnav">
+<a href="#"><img class="logo" src="https://i.ibb.co/mDpmR4x/logo-icon.png" alt=""></a>
+<a id="active">TEXT SUMMARIZER</a>
+
+</div>
+</header>
+
+
+
+
+
+<div class="container fadeInDown">
+	  <div id="formContent">
+	  <form method="post">
+		<div>
+	   <h2>Type the Content to be Summarized</h2><br>
+		 {% csrf_token %}
+		 {{ form.as_p}}
+	   <br><br>
+	 	</div>
+	   <button type = "submit" class = 'h-button'
+	   aria-label="LET'S GO" data-text='SUMMARIZE'>
+  <span>L</span>
+  <span>E</span>
+  <span>T'</span>
+  <span>S</span>
+  <span> </span>
+  <span>G</span>
+  <span>O</span>
+  </button>
+<br>
+	   </form>
+	   <div>
+	   <h2>Summarized Text</h2><br>
+	   <textarea class = "textarea" id="textarea2" name="textarea2" rows="15" cols="60">{{ text }}</textarea>
+	   </div>
+
+
+	  </div>
+	</div>
+
+
+<section class="right-section">
+</section>
+
+</html>
